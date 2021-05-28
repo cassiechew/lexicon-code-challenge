@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "5a881b7d-c5e8-4a0b-b4e2-26b264218871",
+		"name": "Lexicon Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://challenge.lexicondigital.com.au/api/v2/cinemaworld/movies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "Yr2636E6BTD3UCdleMkf7UEdqKnd9n361TQL9An7",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://challenge.lexicondigital.com.au/api/v2/cinemaworld/movies",
+					"protocol": "https",
+					"host": [
+						"challenge",
+						"lexicondigital",
+						"com",
+						"au"
+					],
+					"path": [
+						"api",
+						"v2",
+						"cinemaworld",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://challenge.lexicondigital.com.au/api/v2/filmworld/movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://challenge.lexicondigital.com.au/api/v2/filmworld/movies",
+					"protocol": "https",
+					"host": [
+						"challenge",
+						"lexicondigital",
+						"com",
+						"au"
+					],
+					"path": [
+						"api",
+						"v2",
+						"filmworld",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "Yr2636E6BTD3UCdleMkf7UEdqKnd9n361TQL9An7",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "x-api-key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
