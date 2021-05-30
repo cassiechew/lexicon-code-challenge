@@ -1,0 +1,13 @@
+{
+  "app": {
+    "api": {
+      "base": "https://challenge.lexicondigital.com.au/api/v2/",
+      "cinema": ["cinemaworld", "filmworld"],
+      "endpoint": "/movies",
+      "key": "Yr2636E6BTD3UCdleMkf7UEdqKnd9n361TQL9An7"
+    },
+    "temp": {
+      "img": "https://ceblog.s3.amazonaws.com/wp-content/uploads/2012/02/find-royalty-free-images-not-overused.jpg"
+    }
+  }
+}
