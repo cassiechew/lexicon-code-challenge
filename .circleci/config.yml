@@ -35,8 +35,7 @@ jobs:
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       - run:
           name: install python
-          command: apt-get update
-                  apt-get install python
+          command: apt-get update && apt-get install python2
       - node/install-packages:
          pkg-manager: yarn 
       - run:
