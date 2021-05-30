@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: containers/Movies/movieInfo.jsx</title>
+    <title>JSDoc: Source: containers/Movies/movieInfoLine.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: containers/Movies/movieInfo.jsx</h1>
+    <h1 class="page-title">Source: containers/Movies/movieInfoLine.jsx</h1>
 
     
 
@@ -27,7 +27,7 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from 'react';
-import MovieInfoLine from './movieInfoLine';
+
 
 /**
  * Component to hold the movie information.
@@ -35,13 +35,9 @@ import MovieInfoLine from './movieInfoLine';
  * @Component
  * @param {*} props 
  */
-export default function MovieInfo(props) {
+export default function MovieInfoLine(props) {
     return(
-        &lt;div className='movie-container__data'>
-            &lt;MovieInfoLine text={"Movie "+props.info.name} />
-            &lt;MovieInfoLine text={"Cinemaworld $"+props.info.cwldp} />
-            &lt;MovieInfoLine text={"Filmworld $"+props.info.fwldp} />
-        &lt;/div>
+        &lt;p className='movie-container__data__text'>{props.text}&lt;/p>
     )
 }</code></pre>
         </article>

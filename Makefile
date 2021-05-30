@@ -5,3 +5,6 @@ build:
 
 run: build
 	serve -s build
+
+docs:
+	yarn docs

@@ -43,44 +43,38 @@
 
 
     <section>
-        <article><h1>Getting Started with Create React App</h1>
-<p>This project was bootstrapped with <a href="https://github.com/facebook/create-react-app">Create React App</a>.</p>
-<h2>Available Scripts</h2>
-<p>In the project directory, you can run:</p>
-<h3><code>yarn start</code></h3>
-<p>Runs the app in the development mode.<br>
-Open <a href="http://localhost:3000">http://localhost:3000</a> to view it in the browser.</p>
-<p>The page will reload if you make edits.<br>
-You will also see any lint errors in the console.</p>
-<h3><code>yarn test</code></h3>
-<p>Launches the test runner in the interactive watch mode.<br>
-See the section about <a href="https://facebook.github.io/create-react-app/docs/running-tests">running tests</a> for more information.</p>
-<h3><code>yarn build</code></h3>
-<p>Builds the app for production to the <code>build</code> folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.</p>
-<p>The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!</p>
-<p>See the section about <a href="https://facebook.github.io/create-react-app/docs/deployment">deployment</a> for more information.</p>
-<h3><code>yarn eject</code></h3>
-<p><strong>Note: this is a one-way operation. Once you <code>eject</code>, you can’t go back!</strong></p>
-<p>If you aren’t satisfied with the build tool and configuration choices, you can <code>eject</code> at any time. This command will remove the single build dependency from your project.</p>
-<p>Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except <code>eject</code> will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.</p>
-<p>You don’t have to ever use <code>eject</code>. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.</p>
-<h2>Learn More</h2>
-<p>You can learn more in the <a href="https://facebook.github.io/create-react-app/docs/getting-started">Create React App documentation</a>.</p>
-<p>To learn React, check out the <a href="https://reactjs.org/">React documentation</a>.</p>
-<h3>Code Splitting</h3>
-<p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/code-splitting">https://facebook.github.io/create-react-app/docs/code-splitting</a></p>
-<h3>Analyzing the Bundle Size</h3>
-<p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size">https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size</a></p>
-<h3>Making a Progressive Web App</h3>
-<p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app">https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app</a></p>
-<h3>Advanced Configuration</h3>
-<p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/advanced-configuration">https://facebook.github.io/create-react-app/docs/advanced-configuration</a></p>
-<h3>Deployment</h3>
-<p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/deployment">https://facebook.github.io/create-react-app/docs/deployment</a></p>
-<h3><code>yarn build</code> fails to minify</h3>
-<p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify">https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify</a></p></article>
+        <article><h1>Description</h1>
+<p>This is a response to the Lexicon Digital Challenge. An implimentation of a movie website price comparison website frontend with a provided API. The application has been scaffolded with create-react-app.</p>
+<h1>Instructions</h1>
+<p>To run this app, install the dependancies with yarn with this command.</p>
+<pre class="prettyprint source lang-sh"><code>yarn
+</code></pre>
+<p>Then build the application.</p>
+<pre class="prettyprint source lang-sh"><code>yarn build
+</code></pre>
+<p>After which instructions will appear to run it on the local network with serve.</p>
+<pre class="prettyprint source lang-sh"><code>serve -s build
+</code></pre>
+<p>This runs the app and will be accessable through the network address provided.</p>
+<h1>Context</h1>
+<p>The main users for this kind of application would be for people who wish to compare movie prices from the two websites to get the lowest price.</p>
+<h1>Architectural Elements and Decisions</h1>
+<p>There were a few decisions made regarding the building of this application concerning file structure, and component responsibility.</p>
+<h2>File Structure</h2>
+<p>Concerning file structure, I took a standard react app approach to seperate UI elements into state-changing, and non-state-changing categories. The folders components, and containers respectively. This was done even though there were no other pages to allow for the app to be more extensible to additional developers in the future should the client wish to expand the functionality. I have also decided to include the assets, and config folder in the src folder for similar reasons.
+Other items of note would be the addition of a postman collection. Postman being an API testing tool to hit APIs. This was added to allow for quick testing of the API and to see more clearly the response json that would be returned.</p>
+<h2>Component Responsibility</h2>
+<p>With components, as mentioned above they have been split into the two categories. Furthermore, each component has been broken down to it's smallest components to a degree. This is to allow for a better unit testing structure where each component can be tested in isolation.</p>
+<h2>Reliability</h2>
+<p>As the API provided was known to be unrealiable, I added a retry function in order to ensure the data was properly obtained. This would, through the fetch response object, check for an ok. If there was not an ok on the response, it would retry the function until it did, and then return the response data.
+There was another solution that was on the table at the time of building, which was to develop a middleman server and database, which would have fetched the data, with a similar retry method, and store the transformed movie data in its own data store, possibly MongoDB or Redis. The data would then be updated periodically, possibly overnight to ensure an updated database. This would ensure quality service to the front end client while also reducing the computational load of processing the information.</p>
+<h2>CI</h2>
+<p>CI was setup using CircleCI. This was also to allow for possible future extensibility, and a lower overhead to set it up if the need be.</p>
+<h1>Trade offs</h1>
+<p>One of the trade offs would be found in the decision of the language that I started in. I decided to go with React Javascript instead of React Typescript as Typescript may have been a bit too much overhead in comparison.
+The other trade off was the decision explained above about creating a middleman server to house in between data. While this would provide better service, given the overall time constraints, I decided it would have been better to ensure a better quality front end.</p>
+<h1>Assumptions</h1>
+<p>The main assumption I made was that the API provided would perform overly poorly. This was to justify the approach I made in the retry of the calling of the API.</p></article>
     </section>
 
 
@@ -97,7 +91,7 @@ Your app is ready to be deployed!</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sun May 30 2021 23:35:07 GMT+1000 (Australian Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Mon May 31 2021 00:57:58 GMT+1000 (Australian Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
