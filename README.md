@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+ instructions, context, architectural elements and decisions, trade-offs and
+assumptions made
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Description
+This is a response to the Lexicon Digital Challenge. An implimentation of a movie website price comparison website frontend with a provided API. The application has been scaffolded with create-react-app.
 
-## Available Scripts
+# Instructions
+To run this app, install the dependancies with yarn with this command.
+```sh
+yarn
+```
+Then build the application. 
+```sh
+yarn build
+```
+After which instructions will appear to run it on the local network with serve.
+```sh
+serve -s build
+```
+This runs the app and will be accessable through the network address provided.
 
-In the project directory, you can run:
+# Context
+The main users for this kind of application would be for people who wish to compare movie prices from the two websites to get the lowest price.
 
-### `yarn start`
+# Architectural Elements and decisions
+There were a few decisions made regarding the building of this application concerning file structure, and component responsibility.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## File Structure
+Concerning file structure, I took a standard react app approach to seperate UI elements into state-changing, and non-state-changing categories. The folders components, and containers respectively. This was done even though there were no other pages to allow for the app to be more extensible to additional developers in the future should the client wish to expand the functionality. I have also decided to include the assets, and config folder in the src folder for similar reasons.
+Other items of note would be the addition of a postman collection. Postman being an API testing tool to hit APIs. This was added to allow for quick testing of the API and to see more clearly the response json that would be returned.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Component Responsibility
+With components, as mentioned above they have been split into the two categories. Furthermore, each component has been broken down to it's smallest components to a degree. This is to allow for a better unit testing structure where each component can be tested in isolation.
