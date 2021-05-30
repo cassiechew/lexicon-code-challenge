@@ -27,8 +27,6 @@ const fetchRetry = (url, fetchOptions) => {
 export const getMovies = async (options) => {
     return await fetchRetry(conf.app.api.base+conf.app.api.cinema[0]+conf.app.api.endpoint, options).then(mres => {
         return fetchRetry(conf.app.api.base+conf.app.api.cinema[1]+conf.app.api.endpoint, options).then(fres => {
-            console.log(mres);
-            console.log(fres);
             let zipped = mres.Movies.map((e, i) => {
                 return [e, fres.Movies[i]];
             });

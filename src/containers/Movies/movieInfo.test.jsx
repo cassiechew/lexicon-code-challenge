@@ -17,12 +17,4 @@ describe('Movie Info Component', () => {
         const wrapper = shallow(<MovieInfo info={test} />);
         expect(wrapper.hasClass('movie-container__data')).toEqual(true);
     });
-
-    it('renders the movie template', () => {
-        
-        const wrapper = shallow(<MovieInfo info={test} />);
-        expect(wrapper.text()).toContain('Movie');
-        expect(wrapper.text()).toContain('Cinemaworld');
-        expect(wrapper.text()).toContain('Filmworld');
-    });
 });

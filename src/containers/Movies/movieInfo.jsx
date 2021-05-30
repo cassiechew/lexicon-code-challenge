@@ -1,8 +1,8 @@
 import React from 'react';
-
+import MovieInfoLine from './movieInfoLine';
 
 /**
- * Component to hold the movie information of the movie.
+ * Component to hold the movie information.
  * 
  * @Component
  * @param {*} props 
@@ -10,9 +10,9 @@ import React from 'react';
 export default function MovieInfo(props) {
     return(
         <div className='movie-container__data'>
-            <p className='movie-container__data__text'>Movie {props.info.name}</p>
-            <p className='movie-container__data__text'>Cinemaworld ${props.info.cwldp}</p> 
-            <p className='movie-container__data__text'>Filmworld ${props.info.fwldp}</p>
+            <MovieInfoLine text={"Movie "+props.info.name} />
+            <MovieInfoLine text={"Cinemaworld $"+props.info.cwldp} />
+            <MovieInfoLine text={"Filmworld $"+props.info.fwldp} />
         </div>
     )
 }
