@@ -33,8 +33,8 @@ With components, as mentioned above they have been split into the two categories
 As the API provided was known to be unrealiable, I added a retry function in order to ensure the data was properly obtained. This would, through the fetch response object, check for an ok. If there was not an ok on the response, it would retry the function until it did, and then return the response data. 
 There was another solution that was on the table at the time of building, which was to develop a middleman server and database, which would have fetched the data, with a similar retry method, and store the transformed movie data in its own data store, possibly MongoDB or Redis. The data would then be updated periodically, possibly overnight to ensure an updated database. This would ensure quality service to the front end client while also reducing the computational load of processing the information.
 
- instructions, context, architectural elements and decisions, trade-offs and
-assumptions made
+## CI
+CI was setup using CircleCI. This was also to allow for possible future extensibility, and a lower overhead to set it up if the need be.
 
 # Trade offs
 One of the trade offs would be found in the decision of the language that I started in. I decided to go with React Javascript instead of React Typescript as Typescript may have been a bit too much overhead in comparison. 
