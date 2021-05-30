@@ -34,8 +34,9 @@ jobs:
       # The orb install-packages step will also automatically cache them for faster future runs.
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       - run:
-          name: python check
-          command: python --version
+          name: install python
+          command: apt-get update
+                  apt-get install python
       - node/install-packages:
          pkg-manager: yarn 
       - run:
