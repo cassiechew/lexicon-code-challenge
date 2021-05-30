@@ -6,7 +6,6 @@ executors:
   docker-exec:
     docker:
       - image: cimg/node:15.1
-      - image: cimg/python:2.7.18
   ubuntu_20-04-exec:
     machine:
       image: 'ubuntu-2004:202010-01'
@@ -36,6 +35,9 @@ jobs:
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       - node/install-packages:
          pkg-manager: yarn 
+      - run:
+          name: python check
+          command: python --version
       - run:
           name: Run tests
           command: npm test
