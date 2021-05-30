@@ -6,6 +6,7 @@ executors:
   docker-exec:
     docker:
       - image: cimg/node:15.1
+      - image: circleci/python:2.7.18
   ubuntu_20-04-exec:
     machine:
       image: 'ubuntu-2004:202010-01'
