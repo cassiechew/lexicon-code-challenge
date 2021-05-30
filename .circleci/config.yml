@@ -3,9 +3,9 @@
 version: 2.1
 
 executors:
-  docker-exec:
-    docker:
-      - image: cimg/node:15.1
+  # docker-exec:
+  #   docker:
+  #     - image: cimg/node:15.1
   ubuntu_20-04-exec:
     machine:
       image: 'ubuntu-2004:202010-01'
@@ -20,27 +20,27 @@ orbs:
 
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
-  docker-tester:  
-    # These next lines define a Docker executor: https://circleci.com/docs/2.0/executor-types/
-    # You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/node
-    executor: docker-exec
-    # Then run your tests!
-    # CircleCI will report the results back to your VCS provider.
-    steps:
-      # Checkout the code as the first step.
-      - checkout
-      # Next, the node orb's install-packages step will install the dependencies from a package.json.
-      # The orb install-packages step will also automatically cache them for faster future runs.
-      # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
-      - run:
-          name: install python
-          command: apt-get update && apt-get install python2
-      - node/install-packages:
-         pkg-manager: yarn 
-      - run:
-          name: Run tests
-          command: npm test
+  # docker-tester:  
+  #   # These next lines define a Docker executor: https://circleci.com/docs/2.0/executor-types/
+  #   # You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+  #   # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/node
+  #   executor: docker-exec
+  #   # Then run your tests!
+  #   # CircleCI will report the results back to your VCS provider.
+  #   steps:
+  #     # Checkout the code as the first step.
+  #     - checkout
+  #     # Next, the node orb's install-packages step will install the dependencies from a package.json.
+  #     # The orb install-packages step will also automatically cache them for faster future runs.
+  #     # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
+  #     - run:
+  #         name: install python
+  #         command: apt-get update && apt-get install python2
+  #     - node/install-packages:
+  #        pkg-manager: yarn 
+  #     - run:
+  #         name: Run tests
+  #         command: npm test
   ubuntu_20-04-tester:
     executor: ubuntu_20-04-exec
     steps:
