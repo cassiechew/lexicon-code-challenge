@@ -1,6 +1,5 @@
 import React from 'react';
 import './movies.scss';
-import {app} from '../../config/local.json';
 import MovieImage from './movieImage';
 import MovieInfo from './movieInfo';
 
@@ -12,8 +11,8 @@ import MovieInfo from './movieInfo';
  export default function Movie(props) {
     return(
         <div className='movie-container'>
-            <MovieImage img={app.temp.img} />
-            <MovieInfo name={props.name} />
+            <MovieImage img={props} />
+            <MovieInfo info={props} />
         </div>
     )
 }

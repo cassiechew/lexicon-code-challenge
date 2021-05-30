@@ -7,13 +7,18 @@ import { Header } from './components/Header';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('App Component', () => {
-  it('renders Header Component', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.containsMatchingElement(<Header />)).toEqual(true);
-  });
+    it('renders Header Component', () => {
+        const wrapper = shallow(<App />);
+        expect(wrapper.containsMatchingElement(<Header />)).toEqual(true);
+    });
 
-  it('renders Movielist Container', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.containsMatchingElement(<MovieList />)).toEqual(true);
-  });
+    it('renders Movielist Container', () => {
+        const wrapper = shallow(<App />);
+        expect(wrapper.containsMatchingElement(<MovieList />)).toEqual(true);
+    });
+
+    it('renders base div', () => {
+        const wrapper = shallow(<App />);
+        expect(wrapper.hasClass('app')).toEqual(true);
+    });
 });
